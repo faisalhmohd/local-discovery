@@ -11,7 +11,6 @@ exec(cmd, function(error, stdout, stderr) {
             console.log(result);
         } else {
             let deviceInfo = data[i].split(" ").filter(Boolean);
-            // console.log(deviceInfo);
             result.push({
                 ip: deviceInfo[0],
                 macaddress: deviceInfo[1]
