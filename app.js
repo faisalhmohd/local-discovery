@@ -10,14 +10,13 @@ exec(cmd, function(error, stdout, stderr) {
         if (i == data.length) {
             console.log(result);
         } else {
-            let deviceInfo = data[i].split(" ");
+            let deviceInfo = data[i].split(" ").filter(Boolean);
             // console.log(deviceInfo);
             result.push({
                 ip: deviceInfo[0],
-                macaddress: (deviceInfo[11]) ?  deviceInfo[11] : deviceInfo[12]
+                macaddress: deviceInfo[1]
             })
         }
-
     }
 
 });
